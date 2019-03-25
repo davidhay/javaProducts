@@ -62,14 +62,14 @@ They are a bit clumsy to use from Java.
 
 **Further Work**
 
-This code use Spring MVC to provide the 'frontend' web service
+This code makes use Spring MVC to provide the 'frontend' web service
 and uses Spring's RestTemplate to talk to the 'backend' web service.
 
 These are both blocking - a single thread will process an entire request
 and it will block waiting on the response from the remote web service.
 This will lead to problems under high load.
 
-Using non-blocking technologies would solve this problem.
+Using non-blocking technologies would allow for a greater number of concurrent client requests.
 
 The RestTemplate should have its timeouts configured properly.
 
