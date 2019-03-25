@@ -60,6 +60,21 @@ When a request comes into the webservice the request's main flow is through thes
 I used the Java Money API and BigDecimal to hold money and percentages.
 They are a bit clumsy to use from Java.
 
+**Unexpected Data**
+
+In the data from the remote RESTful endpoint, the product's 'price now' is text node containing a monetary amount like this.
+
+    "now": "65.00",
+
+In a few cases, we see a the product's "price now" node is an object.
+
+    "now": {
+        "from": "55.00",
+        "to": "100.00"
+    }
+    
+In the few cases where the product's price is **not** a text node, the price is assumed to be "0.00".
+
 **Further Work**
 
 This code makes use Spring MVC to provide the 'frontend' web service
