@@ -18,10 +18,10 @@ Where you have to choose appropriate values for **server.port** and **data.url**
 
 The following curl commands will get product information from this service.
 
-    $ curl http://localhost:8888/products
-    $ curl http://localhost:8888/products?labelType=ShowWasNow
-    $ curl http://localhost:8888/products?labelType=ShowWasThenNow
-    $ curl http://localhost:8888/products?labelType=ShowPercDiscount
+    $ curl http://localhost:8080/products
+    $ curl http://localhost:8080/products?labelType=ShowWasNow
+    $ curl http://localhost:8080/products?labelType=ShowWasThenNow
+    $ curl http://localhost:8080/products?labelType=ShowPercDiscount
 
 The first and second commands are equivalent.
 
