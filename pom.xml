@@ -79,11 +79,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--
                 <configuration>
-                    <executable>false</executable>
-                    <excludeDevtools>true</excludeDevtools>
-                    <mainClass>com.ealanta.productapp.ProductsApplication</mainClass>
+                    <mainClass>com.ealanta.productapp.ProductsApplicationKt</mainClass>
                 </configuration>
+                -->
             </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
