@@ -105,12 +105,6 @@ It would be nice to use SwaggerFox annotations to generate the swagger spec for 
 
 **Kotlin**
 
-I had intended in writing this in Kotlin too but I didn't have the time.
-
-The Kotlin solution would certainly benefit from :
-* less boiler plate (data classes instead of Lombok)
-* better Null Safety with Nullable and Non-Null types.
-* more fluent code with Kotlin extension methods ( I think this would really have helped with MonetaryAmounts and BigDecimals)
-
+See the 'kotlin' branch to see the kotlin version of this application.
 
     
