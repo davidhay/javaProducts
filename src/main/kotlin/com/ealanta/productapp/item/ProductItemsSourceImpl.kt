@@ -6,6 +6,7 @@ import com.ealanta.productapp.misc.UrlValidator
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
@@ -13,16 +14,13 @@ import org.springframework.web.client.RestTemplate
 @Service
 @Profile("!test")
 class ProductItemsSourceImpl
-@Autowired constructor(@param:Value("\${data.url}") private val url: String) : ProductItemsSource {
+@Autowired constructor(@param:Value("\${data.url}") private val url: String, val restTemplate:RestTemplate) : ProductItemsSource {
 
     private val logger = KotlinLogging.logger {}
-
-    private val restTemplate: RestTemplate
 
     init {
         checkURL(url)
         logger.info("USING REMOTE URL {}", url)
-        this.restTemplate = RestTemplate()
     }
 
     override val productItems: List<ProductItem>
@@ -39,3 +37,4 @@ class ProductItemsSourceImpl
         }
     }
 }
+

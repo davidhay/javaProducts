@@ -8,6 +8,7 @@ import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.env.Environment
 import org.springframework.test.context.junit4.SpringRunner
+import org.springframework.web.client.RestTemplate
 import java.util.*
 import kotlin.properties.Delegates
 import kotlin.test.assertEquals
@@ -21,11 +22,14 @@ class ProductItemServiceIntegrationTest {
     @Autowired
     lateinit var env: Environment;
 
+    @Autowired
+    lateinit var restTemplate: RestTemplate;
+
     var sut: ProductItemsSourceImpl by Delegates.notNull()
 
     @Before
     fun setup() {
-        this.sut = ProductItemsSourceImpl("http://localhost:8080/products");
+        this.sut = ProductItemsSourceImpl("http://localhost:8080/products",restTemplate);
         System.out.println(Arrays.toString(env.getActiveProfiles()));
     }
 
